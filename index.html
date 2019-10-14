@@ -7,17 +7,21 @@ Form Data Processing</title>
 </head>
 <body>
     <form action="/cgi-bin/form.py">
-        <input type="text" name="TEXT_1">
+	        <input type="text" name="TEXT_1">
         <input type="text" name="TEXT_2">
+		<input type="hidden" name="action" value="getreq">
         <input type="submit">
     </form>
 	<form action="/cgi-bin/form.py" method="POST"><p>
-                <textarea  name="TEXT_3"> </textarea></p>
+	                <textarea  name="TEXT_3"> </textarea></p>
+					<input type="hidden" name="action" value="postreq">
         <input type="submit">
     </form>
    
-	<form action="/cgi-bin/form.py"enctype="multipart/form-data" method="post">
+	<form action="/cgi-bin/form3.py"enctype="multipart/form-data" method="post">
+	
    <p><input type="file" name="file">
+   <input type="hidden" name="action" value="filereq">
    <input type="submit" value="send"></p>
   </form> 
 </body>
