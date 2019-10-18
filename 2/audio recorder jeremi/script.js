@@ -27,10 +27,12 @@ record.onclick = e => {
     stopRecord.disabled=false;
     audioChunks = [];
     rec.start();
+	window.myVar = setInterval(timer, 1000);
 }
 
 stopRecord.onclick = e => {
 	console.log("I was clicked");
+	clearInterval(myVar);
 	pause.disabled = true;
     record.disabled = false;
     stopRecord.disabled=true;
@@ -42,6 +44,9 @@ pause.onclick = e => {
 	console.log(i);
 	if(i % 2==0){
 	rec.pause();
+	  clearInterval(myVar);
+	  var obj1=document.getElementById('timer_inp');
+	console.log(obj1);
 	console.log("I was clicked");
 	stopRecord.disabled=true;
 	record.disabled = true;
@@ -49,16 +54,14 @@ pause.onclick = e => {
 	else{
 	console.log("I was clicked");
 	rec.resume();
+	myVar = setInterval(timer, 1000);
 	stopRecord.disabled=false;
 	record.disabled = true;
 }
         
 }	
-	
-	
 
-
-function timer(){
+/*function timer(){
  var obj=document.getElementById('timer_inp');
  obj.innerHTML++;
 
@@ -67,8 +70,40 @@ function timer(){
 setTimeout(function(){},1000);
 }
  else{
-	 setTimeout(timer,1000);
+	setTimeout(timer,1000);
  }
+}*/
+function timer(){
+var obj=document.getElementById('timer_inp');
+ obj.innerHTML++;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
