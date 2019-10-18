@@ -19,51 +19,48 @@ function handlerFunction(stream) {
 }
 
 function sendData(data) {}
-
 record.onclick = e => {
-	contin.disabled = true;
+	setTimeout(timer,1000);
 	record.disabled = true;
 	pause.disabled = false;
 	console.log('I was clicked');
-    //record.style.backgroundColor = "blue";
     stopRecord.disabled=false;
     audioChunks = [];
     rec.start();
 }
 
 stopRecord.onclick = e => {
-	
-    console.log("I was clicked");
-	contin.disabled = true;
+	console.log("I was clicked");
 	pause.disabled = true;
     record.disabled = false;
-    stop.disabled=true;
-    //record.style.backgroundColor = "red";
+    stopRecord.disabled=true;
     rec.stop();
 }
+var i=1;
 pause.onclick = e => {
-	 console.log("I was clicked");
-	//pause.style.backgroundColor = "green";
-	contin.disabled = false;
-	pause.disabled = true;
+	i++;
+	console.log(i);
+	if(i % 2==0){
+	rec.pause();
+	console.log("I was clicked");
 	stopRecord.disabled=true;
 	record.disabled = true;
-	rec.pause();
-	
-}
-contin.onclick = e => {
-	contin.disabled = false;
-	record.disabled = true;
-	stopRecord.disabled=false;
-if(pause.disabled == true){
+	}
+	else{
+	console.log("I was clicked");
 	rec.resume();
-	pause.disabled = false;
-	}	
-	
+	stopRecord.disabled=false;
+	record.disabled = true;
 }
+        
+}	
+	
+	
+
+
 function timer(){
  var obj=document.getElementById('timer_inp');
- obj.innerHTML--;
+ obj.innerHTML++;
 
  if(obj.innerHTML==0)
  {alert('Hello');
@@ -73,5 +70,5 @@ setTimeout(function(){},1000);
 	 setTimeout(timer,1000);
  }
 }
-setTimeout(timer,1000);
+
 
