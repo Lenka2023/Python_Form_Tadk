@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Live input record and playback</title>
+        <link rel="stylesheet" href="style.css">
+		
+    </head>
+<body>
+    <h2>
+        Record
+    </h2>
+    <p>
+        <button id="record">
+		Record
+        </button>
+        <button id="stopRecord" disabled>
+            Stop
+        </button>
+		 <button id="pause" disabled>
+            Pause
+        </button>
+		<button id="contin" disabled>
+            Contin
+        </button>
+    </p>
+    <p>
+        <audio id="recordedAudio">
+        </audio>
+    </p>
+	<div id="timer_inp">99</div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+#record {
+    
+}
+#stopRecord {
+  
+}
+h2 {
+    left: 100px;
+    position: relative;
+}
+#recordedAudio {
+  left: 100px;
+  right: 100px;
+  position: relative;
+}
